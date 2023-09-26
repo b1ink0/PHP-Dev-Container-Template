@@ -1,10 +1,19 @@
-<?php
-$pdo = new PDO('mysql:dbname=db;host=mysql', 'root_user', 'root', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+<html>
 
-$query = $pdo->query('SHOW VARIABLES like "version"');
+<body>
 
-$row = $query->fetch();
+    <h1>GET</h1>
+    <form action="welcome_get.php" method="get">
+        Name: <input type="text" name="name"><br>
+        E-mail: <input type="text" name="email"><br>
+        <input type="submit">
+    </form>
+    <h1>POST</h1>
+    <form action="welcome_post.php" method="post">
+        Name: <input type="text" name="name"><br>
+        E-mail: <input type="text" name="name"><br>
+        <input type="submit">
+    </form>
+</body>
 
-echo "<h1>" . 'MySQL version:' . $row['Value'] . "</h1>";
-
-phpinfo();
+</html>
